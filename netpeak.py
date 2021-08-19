@@ -1,0 +1,35 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome(executable_path='c:\selenium browser drivers\chromedriver.exe')
+
+driver.get('https://netpeak.ua/')
+
+elem = driver.find_element(By.XPATH, '//*[@id="rec278727844"]/div/div/div/div[1]/div/nav/div[1]/div[1]/ul/li[4]/a')
+elem.click()
+time.sleep(3)
+driver.switch_to_window(driver.window_handles[1])
+elem = driver.find_element(By.XPATH, '/html/body/div[5]/div/div/div[5]/div/a')
+elem.click()
+time.sleep(3)
+elem = driver.find_element(By.ID, 'upload')
+elem.send_keys('D:/1.png')
+elem = driver.find_element(By.XPATH, '//*[@id="inputName"]')
+elem.send_keys('Cross')
+elem = driver.find_element(By.XPATH, '//*[@id="inputLastname"]')
+elem.send_keys('hsdfh')
+elem = driver.find_element(By.XPATH, '//*[@id="inputEmail"]')
+elem.send_keys('hsdfh@gmail.com')
+elem = driver.find_element(By.XPATH, '//*[@id="user-main-info"]/div[11]/div[2]/select')
+elem.send_keys('1992')
+elem = driver.find_element(By.XPATH, '//*[@id="user-main-info"]/div[11]/div[3]/select')
+elem.send_keys('июнь')
+elem = driver.find_element(By.XPATH, '//*[@id="user-main-info"]/div[11]/div[4]/select')
+elem.send_keys('23')
+elem = driver.find_element(By.XPATH, '//*[@id="inputPhone"]')
+elem.send_keys('+380934231616')
+elem = driver.find_element(By.XPATH, '//*[@id="submit"]')
+elem.click()
+elem = driver.find_element(By.XPATH, '//*[@id="main-menu"]/ul/li[3]/a')
+elem.click()
